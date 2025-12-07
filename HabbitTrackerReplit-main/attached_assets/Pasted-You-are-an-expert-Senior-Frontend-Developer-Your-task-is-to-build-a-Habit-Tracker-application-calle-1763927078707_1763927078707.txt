@@ -1,0 +1,39 @@
+You are an expert Senior Frontend Developer. Your task is to build a Habit Tracker application called "HabitTrac" based on the attached UI images and the specific technical architecture described below.
+
+### TECH STACK:
+- **Framework:** React + TypeScript (Vite)
+- **Styling:** Tailwind CSS (Crucial for replicating the clean, modern gray/blue aesthetic in the images)
+- **Charts:** Recharts (For statistics)
+- **Icons:** Lucide-React
+- **Routing:** React-Router-Dom
+- **State Management:** React Context API (via Providers)
+
+### UI VISUAL REFERENCE (See attached images):
+Please replicate the following views with high visual fidelity:
+1.  **Landing Page (Image 1):** Minimalist entry with "Habit Tracker" heading and "Start Now" button.
+2.  **Main Dashboard (Image 2):** Sidebar navigation, Calendar view (month), "My Habits" checklist, and "My Dashboard" summary widgets.
+3.  **User Profile (Image 3):** User stats header, "Statistics" cards (Streak, Total habits), "Achievements" badges, and "Friend updates".
+4.  **Habit Creation Modal (Image 4):** A "Habit Tracking Overview" modal with a description, group selection, and a slider input (1-10).
+5.  **Statistics Page (Image 5):** Detailed data table (Daily Steps, Sleep) and bar charts for progress.
+
+### MANDATORY PROJECT STRUCTURE (Feature-Sliced Design):
+You must strictly adhere to this folder structure. Do not group files by type (e.g., do not put all components in one folder). Group them by **Feature**.
+
+```text
+src/
+├── assets/            # Static assets, images
+├── components/        # Shared, "dumb" UI components (Global)
+│   ├── ui/            # Primitive atoms: Button, Modal, Input, Card, Checkbox (Use Tailwind here)
+│   └── layout/        # Structural components: Navbar, Sidebar, LayoutWrapper
+├── features/          # CORE BUSINESS LOGIC
+│   ├── auth/          # Authentication logic (Mock)
+│   ├── habits/        # Habit management (HabitList, HabitForm, types)
+│   ├── tracking/      # Daily check-off logic, Calendar components
+│   ├── stats/         # Charts (Recharts), Streak counters, Aggregation utils
+│   └── groups/        # Group logic, sharing features
+├── hooks/             # Global generic hooks (e.g., useLocalStorage)
+├── pages/             # Route views (Dashboard, Profile, Statistics, Landing)
+├── providers/         # Context Providers (AuthProvider, ThemeProvider)
+├── styles/            # Global styles (Tailwind imports)
+├── types/             # Global TypeScript definitions
+└── App.tsx            # Routing configuration
